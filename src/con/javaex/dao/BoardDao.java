@@ -221,4 +221,30 @@ public class BoardDao {
 		
 		return cnt;
 	}
+	
+	public int hitUp(int no) {
+		getConnection();
+		
+		StringBuffer sb = new StringBuffer();
+		int cnt = 0;
+		
+		sb.append("UPDATE board ");
+		sb.append("SET hit = hit + 1 ");
+		sb.append("WHERE no = ? ");
+		
+		String sql = sb.toString();
+		
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setInt(1, no);
+			rs = pstm.executeQuery();
+			cnt++;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeConnection();
+		}
+		
+		return cnt;
+	}
 }

@@ -24,7 +24,7 @@
 					
 					<form class="board-form" method="post" action="${pageContext.request.contextPath }/board">
 						<input type="hidden" name="action" value="modify" />
-						<input type="hidden" name="no" value="${param.no}" >
+						<input type="hidden" name="no" value="${modifyContent.no}" >
 				
 						<table class="tbl-ex">
 							<tr>
@@ -32,12 +32,12 @@
 							</tr>
 							<tr>
 								<td class="label">제목</td>
-								<td><input type="text" name="title" value=""></td>
+								<td><input type="text" name="title" value="${modifyContent.title}"></td>
 							</tr>
 							<tr>
 								<td class="label">내용</td>
 								<td>
-									<textarea id="content" name="content"></textarea>
+									<textarea id="content" name="content">${modifyContent.content}</textarea>
 								</td>
 							</tr>
 						</table>

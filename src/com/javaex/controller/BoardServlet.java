@@ -40,10 +40,14 @@ public class BoardServlet extends HttpServlet {
 			int no = Integer.parseInt(request.getParameter("no"));
 			
 			request.setAttribute("boardContent", BoardDao.getInstance().getContent(no));
+			BoardDao.getInstance().hitUp(no);
 			WebUtil.forword(request, response, "/WEB-INF/views/board/read.jsp");
 		}
 		else if("modifyform".equals(action)) {
 			System.out.println("modifyform 호출");
+			int no = Integer.parseInt(request.getParameter("no"));
+			
+			request.setAttribute("modifyContent", BoardDao.getInstance().getContent(no));
 			WebUtil.forword(request, response, "/WEB-INF/views/board/modifyform.jsp");
 		}
 		else if("modify".equals(action)) {
