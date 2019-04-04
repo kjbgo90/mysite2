@@ -5,6 +5,6 @@
 	<ul>
 		<li><a href="${pageContext.request.contextPath }/main">황일영</a></li>
 		<li><a href="${pageContext.request.contextPath }/guestbook?action=addlst">방명록</a></li>
-		<li><a href="">게시판</a></li>
+		<li><a href="${pageContext.request.contextPath }/board?action=list">게시판</a></li>
 	</ul>
 </div>
